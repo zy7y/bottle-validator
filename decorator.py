@@ -6,7 +6,6 @@ from pydantic.main import BaseModel
 
 
 def validator(func):
-
     @wraps(func)
     def inner(*args, **kwargs):
         _obj: BaseModel
@@ -49,4 +48,5 @@ def validator(func):
             return callback.json()
         else:
             return callback
+
     return inner
